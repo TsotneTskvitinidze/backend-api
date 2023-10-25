@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Api\V1;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreProfessionRequest;
+use App\Http\Requests\UpdateProfessionRequest;
 
 class ProfessionController extends Controller
 {
@@ -18,7 +20,7 @@ class ProfessionController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreProfessionRequest $request)
     {
         //
     }
@@ -34,7 +36,7 @@ class ProfessionController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UpdateProfessionRequest $request, string $id)
     {
         //
     }

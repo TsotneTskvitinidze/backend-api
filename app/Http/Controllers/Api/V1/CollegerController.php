@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Api\V1;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\College;
+use App\Http\Requests\StoreCollegeRequest;
+use App\Http\Requests\UpdateCollegeRequest;
 class CollegerController extends Controller
 {
     /**
@@ -18,7 +20,7 @@ class CollegerController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreCollegeRequest $request)
     {
         //
     }
@@ -34,7 +36,7 @@ class CollegerController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UpdateCollegeRequest $request, string $id)
     {
         //
     }
@@ -45,6 +47,6 @@ class CollegerController extends Controller
     public function destroy(College $college)
     {
         $college -> delete();
-        return response()->json(['college' => $college]);
+        return response()->noContent(204);
     }
 }

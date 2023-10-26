@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\College;
 use App\Http\Requests\StoreCollegeRequest;
 use App\Http\Requests\UpdateCollegeRequest;
+use App\Http\Resources\CollegeResource;
 class CollegerController extends Controller
 {
     /**

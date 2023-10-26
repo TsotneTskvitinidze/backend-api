@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Teacher;
 use App\Http\Requests\StoreTeacherRequest;
 use App\Http\Requests\UpdateTeacherRequest;
+use App\Http\Resources\TeacherResource;
 class TeacherController extends Controller
 {
     /**
@@ -14,7 +15,7 @@ class TeacherController extends Controller
      */
     public function index()
     {
-        return Teacher::all();
+        return TeacherResource::collection(Teacher::all());
     }
 
     /**
@@ -30,7 +31,7 @@ class TeacherController extends Controller
      */
     public function show(Teacher $teacher)
     {
-        return $teacher;
+        return TeacherResource::make($teacher);
     }
 
     /**

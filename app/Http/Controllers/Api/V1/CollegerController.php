@@ -40,7 +40,7 @@ class CollegerController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateCollegeRequest $request, string $id)
+    public function update(UpdateCollegeRequest $request, College $college)
     {
         //
     }

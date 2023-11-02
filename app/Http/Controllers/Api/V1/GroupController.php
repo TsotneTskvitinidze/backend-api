@@ -39,7 +39,7 @@ class GroupController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateGroupRequest $request, string $id)
+    public function update(UpdateGroupRequest $request, Group $group)
     {
         //
     }

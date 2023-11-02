@@ -39,7 +39,7 @@ class ModuleController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateModuleRequest $request, string $id)
+    public function update(UpdateModuleRequest $request, Module $module)
     {
         //
     }

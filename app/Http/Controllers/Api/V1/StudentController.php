@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Api\V1;
 
 use App\Http\Controllers\Controller;
+use App\Models\Profession;
+use App\Models\Student;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreStudentRequest;
 use App\Http\Requests\UpdateStudentRequest;
@@ -14,7 +16,7 @@ class StudentController extends Controller
      */
     public function index()
     {
-        //
+        return StudentResource::collection(Student::all());
     }
 
     /**
@@ -22,15 +24,17 @@ class StudentController extends Controller
      */
     public function store(StoreStudentRequest $request)
     {
-        //
+        $data = $request->validated();
+        $student = Student::create($data);
+        return StudentResource::make($student);
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Student $student)
     {
-        //
+        return StudentResource::make($student);
     }
 
     /**
@@ -44,8 +48,9 @@ class StudentController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Student $student)
     {
-        //
+        $student->delete();
+        return response()->noContent(204);
     }
 }

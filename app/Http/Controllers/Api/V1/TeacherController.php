@@ -8,6 +8,8 @@ use App\Models\Teacher;
 use App\Http\Requests\StoreTeacherRequest;
 use App\Http\Requests\UpdateTeacherRequest;
 use App\Http\Resources\TeacherResource;
+use Illuminate\Support\Facades\DB;
+
 class TeacherController extends Controller
 {
     /**
@@ -23,7 +25,9 @@ class TeacherController extends Controller
      */
     public function store(StoreTeacherRequest $request)
     {
-        //
+        $data = $request->all();
+        $teacher = Teacher::create($data);
+        return TeacherResource::make($teacher);
     }
 
     /**

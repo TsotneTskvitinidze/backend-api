@@ -15,7 +15,8 @@ class CollegerController extends Controller
      */
     public function index()
     {
-        return College::all();
+        return CollegeResource::collection(College::all());
+
     }
 
     /**
@@ -23,7 +24,9 @@ class CollegerController extends Controller
      */
     public function store(StoreCollegeRequest $request)
     {
-        //
+        $data = $request->validated();
+        $college = College::create($data);
+        return CollegeResource::make($college);
     }
 
     /**
@@ -31,7 +34,7 @@ class CollegerController extends Controller
      */
     public function show(College $college)
     {
-        return $college;
+        return CollegeResource::make($college);
     }
 
     /**

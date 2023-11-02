@@ -1,4 +1,4 @@
-<?php 
+<?php
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\V1\CollegerController;
 use App\Http\Controllers\Api\V1\TeacherController;
@@ -16,5 +16,6 @@ Route::prefix('v1') -> group(function () {
         'modules' =>     ModuleController::class,
         'professions' => ProfessionController::class,
     ]);
+    Route::post('/store_teacher', [TeacherController::class, 'storeTeacher']);
 });
 ?>

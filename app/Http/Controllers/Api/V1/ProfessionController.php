@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Api\V1;
 
 use App\Http\Controllers\Controller;
+use App\Models\Module;
+use App\Models\Profession;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreProfessionRequest;
 use App\Http\Requests\UpdateProfessionRequest;
@@ -15,7 +17,7 @@ class ProfessionController extends Controller
      */
     public function index()
     {
-        //
+        return ProfessionResource::collection(Profession::all());
     }
 
     /**
@@ -23,15 +25,17 @@ class ProfessionController extends Controller
      */
     public function store(StoreProfessionRequest $request)
     {
-        //
+        $data = $request->validated();
+        $profession = Profession::create($data);
+        return ProfessionResource::make($profession);
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Profession $profession)
     {
-        //
+        return ProfessionResource::make($profession);
     }
 
     /**
@@ -45,8 +49,9 @@ class ProfessionController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Profession $profession)
     {
-        //
+        $profession->delete();
+        return response()->noContent(204);
     }
 }

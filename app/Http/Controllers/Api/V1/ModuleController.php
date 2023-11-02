@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api\V1;
 
 use App\Http\Controllers\Controller;
+use App\Models\Module;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreModuleRequest;
 use App\Http\Requests\UpdateModuleRequest;
@@ -14,7 +15,7 @@ class ModuleController extends Controller
      */
     public function index()
     {
-        //
+        return ModuleResource::collection(Module::all());
     }
 
     /**
@@ -22,15 +23,17 @@ class ModuleController extends Controller
      */
     public function store(StoreModuleRequest $request)
     {
-        //
+        $data = $request->validated();
+        $module = Module::create($data);
+        return ModuleResource::make($module);
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Module $module)
     {
-        //
+        return ModuleResource::make($module);
     }
 
     /**
@@ -44,8 +47,9 @@ class ModuleController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Module $module)
     {
-        //
+        $module->delete();
+        return response()->noContent(204);
     }
 }

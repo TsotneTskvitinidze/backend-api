@@ -26,7 +26,7 @@ class StoreTeacherRequest extends FormRequest
          'last_name' => 'required|string|min:2|max:30',
          'email' => 'required|email|unique:teachers',
          'phone' => 'required|string|min:9|max:30',
-         'avatar' => 'required|mimes:jpg,bmp,png',
+         'avatar' => 'required',
          'visible' => 'required|string'
         ];
     }

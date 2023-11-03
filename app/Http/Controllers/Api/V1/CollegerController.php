@@ -42,7 +42,7 @@ class CollegerController extends Controller
      */
     public function update(UpdateCollegeRequest $request, College $college)
     {
-        //
+        // $college -> update()
     }
 
     /**

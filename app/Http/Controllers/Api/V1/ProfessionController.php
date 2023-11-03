@@ -43,7 +43,7 @@ class ProfessionController extends Controller
      */
     public function update(UpdateProfessionRequest $request, Profession $profession)
     {
-        //
+        // $profession -> update()
     }
 
     /**

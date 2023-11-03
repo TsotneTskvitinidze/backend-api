@@ -41,7 +41,7 @@ class ModuleController extends Controller
      */
     public function update(UpdateModuleRequest $request, Module $module)
     {
-        //
+        // $module-> update()
     }
 
     /**

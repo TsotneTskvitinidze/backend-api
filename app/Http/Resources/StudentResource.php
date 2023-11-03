@@ -20,7 +20,7 @@ class StudentResource extends JsonResource
             "last_name"=> $this->last_name,
             "email"=> $this->email,
             "phone"=> $this->phone,
-            "avatar"=> asset('images/students' . $this->avatar),
+            "avatar"=> asset('images/students/' . $this->avatar),
             "identifier"=> $this->identifier
         ];
     }

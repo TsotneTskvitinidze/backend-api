@@ -27,7 +27,7 @@ class StoreStudentRequest extends FormRequest
             'email' => 'required|email|unique:students',
             'identifier' => 'required|unique:students',
             'phone' => 'required|string|min:9|max:30',
-            'avatar' => 'required',
+            'avatar' => 'required|mimes:jpg,jpeg,png,webp',
             'visible' => 'required|string'
         ];
     }

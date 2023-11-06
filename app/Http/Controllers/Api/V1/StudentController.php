@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Api\V1;
-
+use Ramsey\Uuid\Uuid;
 use App\Http\Controllers\Controller;
 use App\Models\Profession;
 use App\Models\Student;
@@ -25,7 +25,18 @@ class StudentController extends Controller
     public function store(StoreStudentRequest $request)
     {
         $data = $request->validated();
-        $student = Student::create($data);
+        $avatarName = join('.', [Uuid::uuid4(), $data['avatar']->extension()]);
+        $uploadPath = 'images/students';
+        $data['avatar']->move(public_path($uploadPath), $avatarName);
+        $storeData = [
+            'first_name' => $data['first_name'],
+            'last_name' => $data['last_name'],
+            'email' => $data['email'],
+            'phone' => $data['phone'],
+            'identifier' => $data['identifier'],
+            'avatar' => $avatarName
+        ];
+        $student = Student::create($storeData);
         return StudentResource::make($student);
     }
 

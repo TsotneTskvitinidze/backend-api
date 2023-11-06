@@ -17,8 +17,8 @@ return new class extends Migration
             $table->string('last_name');
             $table->string('email');
             $table->string('phone', 30);
-            $table->integer('identifier');
-            $table->string('avatar', 30) -> nullable();
+            $table->string('identifier');
+            $table->string('avatar') -> nullable();
             $table->boolean('visible') -> default('1');
             $table->timestamps();
         });

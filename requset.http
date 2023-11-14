@@ -1,10 +1,10 @@
-POST  http://127.0.0.1:8000/api/v1/teachers HTTP/1.1
-Content-Type: application/json
-{
-  "first_name": "natia",
-  "last_name": "okropiridze",
-  "email": "natia@gmail.com",
-  "phone": "123456789",
-  "avatar": "avatar.jpg",
-  "visible": "1"
-}
+GET https://dashboard-api-nl3h2.ondigitalocean.app/api/v1/teachers HTTP/1.1
+#Content-Type: application/json
+#{
+#  "first_name": "natia",
+#  "last_name": "okropiridze",
+#  "email": "natia@gmail.com",
+#  "phone": "123456789",
+#  "avatar": "avatar.jpg",
+#  "visible": "1"
+#}

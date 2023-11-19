@@ -6,6 +6,7 @@ use App\Http\Controllers\Api\V1\StudentController;
 use App\Http\Controllers\Api\V1\GroupController;
 use App\Http\Controllers\Api\V1\ModuleController;
 use App\Http\Controllers\Api\V1\ProfessionController;
+use App\Http\Controllers\Api\V1\TeacherGroupController;
 
 Route::prefix('v1') -> group(function () {
     Route::apiResources([
@@ -17,5 +18,8 @@ Route::prefix('v1') -> group(function () {
         'professions' => ProfessionController::class,
     ]);
     Route::post('/store_teacher', [TeacherController::class, 'storeTeacher']);
+    /* add or remove teacher-group connection*/
+    Route::post('/teacher-group', [TeacherGroupController::class, 'store']);
+    Route::delete('/teacher-group/:id', [TeacherGroupController::class, 'destroy']);
 });
-?>
+

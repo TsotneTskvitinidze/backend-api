@@ -14,12 +14,12 @@ return new class extends Migration
         Schema::create('professions', function (Blueprint $table) {
             $table->id();
             $table->string('name', 100);
-            $table->integer('identifier'); 
+            $table->string('identifier', 30);
             $table->timestamps();
         });
     }
 
-    
+
     /**
      * Reverse the migrations.
      */

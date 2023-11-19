@@ -20,7 +20,9 @@ class TeacherResource extends JsonResource
             "last_name"=> $this->last_name,
             "email"=> $this->email,
             "phone"=> $this->phone,
-            "avatar"=> $this->avatar
+            "avatar"=> $this->avatar,
+            "groups" => $this -> groups,
+            "colleges" => $this -> colleges
         ];
     }
 }

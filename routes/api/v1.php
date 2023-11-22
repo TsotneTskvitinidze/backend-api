@@ -7,7 +7,7 @@ use App\Http\Controllers\Api\V1\GroupController;
 use App\Http\Controllers\Api\V1\ModuleController;
 use App\Http\Controllers\Api\V1\ProfessionController;
 use App\Http\Controllers\Api\V1\TeacherGroupController;
-
+use App\Http\Controllers\Api\v1\TableDataController;
 Route::prefix('v1') -> group(function () {
     Route::apiResources([
         'colleges' =>    CollegerController::class,
@@ -21,5 +21,6 @@ Route::prefix('v1') -> group(function () {
     /* add or remove teacher-group connection*/
     Route::post('/teacher-group', [TeacherGroupController::class, 'store']);
     Route::delete('/teacher-group/:id', [TeacherGroupController::class, 'destroy']);
+    Route::get('/tables-data', TableDataController::class);
 });
 

@@ -7,7 +7,7 @@ use App\Http\Controllers\Api\V1\GroupController;
 use App\Http\Controllers\Api\V1\ModuleController;
 use App\Http\Controllers\Api\V1\ProfessionController;
 use App\Http\Controllers\Api\V1\TeacherGroupController;
-use App\Http\Controllers\Api\v1\TableDataController;
+use App\Http\Controllers\Api\V1\TableDataController;
 Route::prefix('v1') -> group(function () {
     Route::apiResources([
         'colleges' =>    CollegerController::class,

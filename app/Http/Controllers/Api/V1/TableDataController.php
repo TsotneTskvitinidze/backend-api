@@ -1,14 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Api\v1;
-
+namespace App\Http\Controllers\Api\V1;
 use App\Http\Controllers\Controller;
-use App\Models\College;
 use Illuminate\Http\Request;
 use App\Models\Teacher;
 use App\Models\Student;
 use App\Models\Group;
 use App\Models\Profession;
+use App\Models\College;
 class TableDataController extends Controller
 {
     /**

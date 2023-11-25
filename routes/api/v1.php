@@ -35,7 +35,6 @@ Route::prefix('v1') -> group(function () {
     Route::post('/college-profession', [CollegeProfessionController::class, 'store']);
     Route::delete('/college-profession/:id', [CollegeProfessionController::class, 'destroy']);
 
-
     Route::get('/tables-data', TableDataController::class);
 });
 

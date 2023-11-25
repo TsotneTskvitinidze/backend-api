@@ -18,6 +18,7 @@ class CollegeResource extends JsonResource
             "id"=> $this->id,
             "name"=> $this->name,
             "address"=> $this->address,
+            "professions"=> $this->professions
         ];
     }
 }

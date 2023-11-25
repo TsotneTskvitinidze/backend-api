@@ -9,4 +9,12 @@ class Group extends Model
 {
     use HasFactory;
     protected $fillable = ['college_id', 'profession_id', 'number'];
+    public function profession()
+    {
+        return $this->belongsTo(Profession::class);
+    }
+    public function college()
+    {
+        return $this->belongsTo(College::class);
+    }
 }

@@ -13,8 +13,10 @@ return new class extends Migration
     {
         Schema::create('groups', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('profession_id'); 
+            $table->unsignedBigInteger('profession_id');
             $table->foreign('profession_id')->references('id')->on('professions');
+            $table->unsignedBigInteger('college_id');
+            $table->foreign('college_id')->references('id')->on('colleges');
             $table->integer('number');
             $table->timestamps();
         });

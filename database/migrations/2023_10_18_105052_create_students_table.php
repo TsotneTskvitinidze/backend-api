@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('phone', 30);
             $table->string('identifier');
             $table->string('avatar') -> nullable();
-            $table->boolean('visible') -> default('1');
+            $table->enum('visible', ['0', '1']) -> default('1');
             $table->timestamps();
         });
     }

@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Group extends Model
 {
     use HasFactory;
-    protected $fillable = ['profession_id', 'number'];
+    protected $fillable = ['college_id', 'profession_id', 'number'];
 }

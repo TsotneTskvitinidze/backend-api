@@ -22,7 +22,8 @@ class StoreGroupRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'profession_id'=> 'required',
+            'college_id'=> 'required|exists:colleges,id',
+            'profession_id'=> 'required|exists:professions,id',
             'number' => 'required'
         ];
     }

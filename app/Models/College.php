@@ -9,4 +9,8 @@ class College extends Model
 {
     use HasFactory;
     protected $fillable = ['name', 'address', 'visible'];
+    public function professions()
+    {
+        return $this->belongsToMany(Profession::class);
+    }
 }

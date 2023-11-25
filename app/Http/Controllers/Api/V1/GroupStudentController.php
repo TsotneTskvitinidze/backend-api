@@ -1,30 +1,30 @@
 <?php
 
-namespace App\Http\Controllers\Api\v1;
+namespace App\Http\Controllers\Api\V1;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
-class TeacherGroupController extends Controller
+class GroupStudentController extends Controller
 {
     public function store(Request $request)
     {
         $validatedData = $request->validate([
             'group_id' => 'required|exists:groups,id',
-            'teacher_id' => 'required|exists:teachers,id',
+            'student_id' => 'required|exists:students,id',
         ]);
-        DB::table('teacher_group')->insert($validatedData);
-        $message = 'Teacher and Group successfully connected';
+        DB::table('group_student')->insert($validatedData);
+        $message = 'Group and Student successfully connected';
 
         return response()->json(['message' => $message], 201);
     }
 
     public function destroy( Request $request, $id)
     {
-        $data = DB::table('teacher_group')->find($id);
+        $data = DB::table('group_student')->find($id);
         if($data){
-            DB::table('teacher_group')->where('id', $id)->delete();
+            DB::table('group_student')->where('id', $id)->delete();
             return response()->json(['message' => 'Relation deleted successfully'], 200);
         } else {
             return response()->json(['message' => 'Record not found'], 404);

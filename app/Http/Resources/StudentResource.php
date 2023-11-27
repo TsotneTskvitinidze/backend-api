@@ -21,7 +21,10 @@ class StudentResource extends JsonResource
             "email"=> $this->email,
             "phone"=> $this->phone,
             "avatar"=> asset('images/students/' . $this->avatar, env('REDIRECT_HTTPS')),
-            "identifier"=> $this->identifier
+            "identifier"=> $this->identifier,
+            "college_id"=> $this -> college_id,
+            "college"=> $this -> college,
+            "groups"=> $this -> groups
         ];
     }
 }

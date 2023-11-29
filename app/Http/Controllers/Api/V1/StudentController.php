@@ -34,6 +34,7 @@ class StudentController extends Controller
             'email' => $data['email'],
             'phone' => $data['phone'],
             'identifier' => $data['identifier'],
+            'college_id' => $data['college_id'],
             'avatar' => $avatarName
         ];
         $student = Student::create($storeData);

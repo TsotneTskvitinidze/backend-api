@@ -28,7 +28,7 @@ class StoreStudentRequest extends FormRequest
             'identifier' => 'required|unique:students',
             'phone' => 'required|string|min:9|max:30',
             'avatar' => 'required|mimes:jpg,jpeg,png,webp',
-            'college_id' => 'required|exists:college,id',
+            'college_id' => 'required|exists:colleges,id',
             'visible' => 'required|string'
         ];
     }

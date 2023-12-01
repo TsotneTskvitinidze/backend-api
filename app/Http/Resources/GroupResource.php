@@ -18,7 +18,8 @@ class GroupResource extends JsonResource
             "id"=> $this->id,
             "profession"=> $this->profession,
             "college"=> $this->college,
-            "number"=> $this->number
+            "number"=> $this->number,
+            "students"=> $this-> students
         ];
     }
 }

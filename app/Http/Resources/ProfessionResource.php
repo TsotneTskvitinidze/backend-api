@@ -18,7 +18,8 @@ class ProfessionResource extends JsonResource
             "id"=> $this->id,
             "name"=> $this->name,
             "identifier"=> $this->identifier,
-            "colleges"=> $this-> colleges
+            "colleges"=> $this-> colleges,
+            "groups"=> $this-> groups
         ];
     }
 }

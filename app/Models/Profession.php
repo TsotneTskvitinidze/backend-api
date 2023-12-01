@@ -13,4 +13,9 @@ class Profession extends Model
     {
         return $this->belongsToMany(College::class);
     }
+
+    public function groups()
+    {
+        return $this->hasMany(Group::class);
+    }
 }

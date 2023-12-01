@@ -24,7 +24,8 @@ class StudentResource extends JsonResource
             "identifier"=> $this->identifier,
             "college_id"=> $this -> college_id,
             "college"=> $this -> college,
-            "groups"=> $this -> groups
+            "groups"=> $this -> groups,
+            'students'=> $this-> students
         ];
     }
 }
